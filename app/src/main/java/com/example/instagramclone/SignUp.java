@@ -58,7 +58,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
 
         if (ParseUser.getCurrentUser() != null) {
-            ParseUser.getCurrentUser().logOut();
+           // ParseUser.getCurrentUser().logOut();
+            transitionToSocialMediaActivity();
         }
 
 
@@ -91,6 +92,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                         public void done(ParseException e) {
                             if (e == null) {
                                 FancyToast.makeText(SignUp.this, appUser.getUsername() + " IS Signed Up", Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
+                                transitionToSocialMediaActivity();
                             } else {
                                 FancyToast.makeText(SignUp.this, "There Is An ERROR : " + e.getMessage(), Toast.LENGTH_SHORT, FancyToast.ERROR, true).show();
                             }
@@ -111,6 +113,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     }
 
+    //this method for hiding the keyboard when the user touch the rootLayout(background)
     public void rootLayoutTapped(View view){
 
         try {
@@ -119,7 +122,11 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
-
+    //this method if for the transition to the social media activity
+    private void transitionToSocialMediaActivity(){
+        Intent intent = new Intent(SignUp.this,SocialMediaActivity.class);
+        startActivity(intent);
     }
 }

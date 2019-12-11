@@ -53,11 +53,22 @@ public class ProfileTab extends Fragment {
 
         final ParseUser parseUser = ParseUser.getCurrentUser();
 
-        edtProfileName.setText(parseUser.get("profileName") + "");
-        edtProfileBio.setText(parseUser.get("profileBio") + "");
-        edtProfileProfession.setText(parseUser.get("profileProfession") + "");
-        edtProfileHobbies.setText(parseUser.get("profileHobbies") + "");
-        edtProfileFavSport.setText(parseUser.get("profileFavSport") + "");
+        if(parseUser.get("profileName") == null || parseUser.get("profileProfession") == null || parseUser.get("profileHobbies") == null || parseUser.get("profileFavSport") == null){
+            edtProfileName.setText("");
+            edtProfileBio.setText("");
+            edtProfileProfession.setText("");
+            edtProfileHobbies.setText("");
+            edtProfileFavSport.setText("");
+        }else{
+            edtProfileName.setText(parseUser.get("profileName") + "");
+            edtProfileBio.setText(parseUser.get("profileBio") + "");
+            edtProfileProfession.setText(parseUser.get("profileProfession") + "");
+            edtProfileHobbies.setText(parseUser.get("profileHobbies") + "");
+            edtProfileFavSport.setText(parseUser.get("profileFavSport") + "");
+
+        }
+
+
 
 
 

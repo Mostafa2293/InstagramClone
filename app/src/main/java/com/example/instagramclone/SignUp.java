@@ -84,7 +84,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
                     final ProgressDialog progressDialog = new ProgressDialog(this);
                     progressDialog.setMessage("Signing Up " + edtUsername.getText().toString());
-
                     progressDialog.show();
 
                     appUser.signUpInBackground(new SignUpCallback() {

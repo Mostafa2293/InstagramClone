@@ -1,13 +1,19 @@
 <resources>
     <string name="app_name">InstagramClone</string>
-    <string name="user_email_hint">Please enter an email..</string>
-    <string name="user_name_hint">Please enter an username..</string>
-    <string name="password_hint">Please enter a password..</string>
+    <string name="user_email_hint">Please enter an email...</string>
+    <string name="user_name_hint">Please enter an username...</string>
+    <string name="password_hint">Please enter a password...</string>
     <string name="sign_up_button">SignUp</string>
     <string name="log_in_button">Login</string>
     <string name="sign_up_activity_title">Sign Up</string>
     <string name="log_in_activity_title">Log In</string>
     <string name="social_media_activity_title">Social Media App !!</string>
+    <string name="fragment_profile_tab_name_hint">Please enter a profile name...</string>
+    <string name="fragment_profile_tab_bio_hint">Please enter your Bio...</string>
+    <string name="fragment_profile_tab_profession_hint">Please enter your profession...</string>
+    <string name="fragment_profile_tab_hobby_hint">Please enter your hobbies...</string>
+    <string name="fragment_profile_tab_sport_hint">Please enter your favorite Sport...</string>
+    <string name="fragment_profile_tab_button">Update Info</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

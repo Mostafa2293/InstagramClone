@@ -41,7 +41,7 @@ public class ProfileTab extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_profile_tab, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile_tab, container, false);
 
         //init UI components
         edtProfileName = view.findViewById(R.id.edtProfileName);
@@ -53,13 +53,13 @@ public class ProfileTab extends Fragment {
 
         final ParseUser parseUser = ParseUser.getCurrentUser();
 
-        if(parseUser.get("profileName") == null || parseUser.get("profileProfession") == null || parseUser.get("profileHobbies") == null || parseUser.get("profileFavSport") == null){
+        if (parseUser.get("profileName") == null || parseUser.get("profileProfession") == null || parseUser.get("profileHobbies") == null || parseUser.get("profileFavSport") == null) {
             edtProfileName.setText("");
             edtProfileBio.setText("");
             edtProfileProfession.setText("");
             edtProfileHobbies.setText("");
             edtProfileFavSport.setText("");
-        }else{
+        } else {
             edtProfileName.setText(parseUser.get("profileName") + "");
             edtProfileBio.setText(parseUser.get("profileBio") + "");
             edtProfileProfession.setText(parseUser.get("profileProfession") + "");
@@ -69,19 +69,16 @@ public class ProfileTab extends Fragment {
         }
 
 
-
-
-
         btnUpdateInfo.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                parseUser.put("profileName",edtProfileName.getText().toString());
-                parseUser.put("profileBio",edtProfileBio.getText().toString());
-                parseUser.put("profileProfession",edtProfileProfession.getText().toString());
-                parseUser.put("profileHobbies",edtProfileHobbies.getText().toString());
-                parseUser.put("profileFavSport",edtProfileFavSport.getText().toString());
+                parseUser.put("profileName", edtProfileName.getText().toString());
+                parseUser.put("profileBio", edtProfileBio.getText().toString());
+                parseUser.put("profileProfession", edtProfileProfession.getText().toString());
+                parseUser.put("profileHobbies", edtProfileHobbies.getText().toString());
+                parseUser.put("profileFavSport", edtProfileFavSport.getText().toString());
 
                 final ProgressDialog progressDialog = new ProgressDialog(v.getContext());
                 progressDialog.setMessage("Updating Info of " + edtProfileName.getText().toString());
@@ -90,11 +87,11 @@ public class ProfileTab extends Fragment {
                 parseUser.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
-                        if (e == null){
+                        if (e == null) {
 
-                            FancyToast.makeText(getContext(),"Info Updated", Toast.LENGTH_SHORT,FancyToast.INFO,true).show();
+                            FancyToast.makeText(getContext(), "Info Updated", Toast.LENGTH_SHORT, FancyToast.INFO, true).show();
                         } else {
-                            FancyToast.makeText(getContext(),e.getMessage(), Toast.LENGTH_SHORT,FancyToast.ERROR,true).show();
+                            FancyToast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT, FancyToast.ERROR, true).show();
                         }
                         progressDialog.dismiss();
 

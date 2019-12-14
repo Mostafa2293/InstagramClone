@@ -17,5 +17,7 @@
     <string name="fragment_users_tab_loading_users_txtview">Loading Users...Please Wait</string>
     <string name="fragment_share_picture_tab_edittxt">Please Enter a description for your image...</string>
     <string name="fragment_share_picture_tab_sharebtn">SHARE IMAGE</string>
+    <string name="my_menu_post_img">Post Image</string>
+    <string name="my_menu_logout_user">LogOut</string>
 
 </resources>
